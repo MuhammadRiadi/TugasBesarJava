@@ -3,102 +3,55 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hais;
-import java.util.Scanner;
+package finaltb;
 
-public class KondisiRuangKelas {
-    private int panjang;
-    private int lebar;
-    private int luas;
-    private int jumlahkursi;
-    private int rasio;
-    private int pintu;
-    private int jendela;
 
-    public int getPanjang() {
-        return panjang;
+public class KondisiRuangKelas extends AnalisiKondisiRuangKelas {
+
+    public KondisiRuangKelas(int panjang, int lebar, int luas, int jumlahkursi, int rasio, int pintu, int jendela) {
+        super(panjang, lebar, luas, jumlahkursi, rasio, pintu, jendela);
     }
-
-    public void setPanjang(int panjang) {
-        this.panjang = panjang;
-    }
-
-    public int getLebar() {
-        return lebar;
-    }
-
-    public void setLebar(int lebar) {
-        this.lebar = lebar;
-    }
-
-    public int getLuas() {
-        return luas;
-    }
-
-    public void setLuas(int luas) {
-        this.luas = luas;
-    }
-
-    public int getJumlahkursi() {
-        return jumlahkursi;
-    }
-
-    public void setJumlahkursi(int jumlahkursi) {
-        this.jumlahkursi = jumlahkursi;
-    }
-
-    public int getRasio() {
-        return rasio;
-    }
-
-    public void setRasio(int rasio) {
-        this.rasio = rasio;
-    }
-
-    public int getPintu() {
-        return pintu;
-    }
-
-    public void setPintu(int pintu) {
-        this.pintu = pintu;
-    }
-
-    public int getJendela() {
-        return jendela;
-    }
-
-    public void setJendela(int jendela) {
-        this.jendela = jendela;
-    }
-        
-    Scanner scan=new Scanner(System.in);
     
+    @Override
     void Luas(){
         System.out.println("\n\n==KONDISI RUANG KELAS==\n\n");
         
         System.out.println("Masukkan Panjang Kelas: ");
-        setPanjang(scan.nextInt());
+        super.setPanjang(scan.nextInt());
         System.out.println("Masukkan Lebar Kelas: ");
-        setLebar(scan.nextInt());
+        super.setLebar(scan.nextInt());
+        super.getLuas();
         
         }
               
 
-
+   @Override
     void Rasio(){
          System.out.println("Masukkan Jumlah Kursi: ");
          setJumlahkursi(scan.nextInt());
-               
+         super.getRasio();
         
                 
     }
-    void pintujendela(){
+    @Override
+    void PintuJendela(){
         System.out.println("Masukkan Jumlah Pintu: ");
-        setPintu(scan.nextInt());
+        super.setPintu(scan.nextInt());
         System.out.println("Masukkan Jumlah Jendela: ");
-        setJendela(scan.nextInt());
+        super.setJendela(scan.nextInt());
         
                 
+    }
+    @Override
+    void OutputRuangKelas(){
+    System.out.println("Panjang="+getPanjang());
+    System.out.println("Lebar="+getLebar());
+    System.out.println("Jumlah Kursi="+getJumlahkursi());
+    super.getJendela();
+    super.getPintu();
+    super.getLuas();
+    super.getRasio();
+  
     }
     
     
