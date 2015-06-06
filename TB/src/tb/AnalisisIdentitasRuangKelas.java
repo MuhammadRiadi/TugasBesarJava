@@ -5,10 +5,7 @@
  */
 package finaltb;
 import java.util.Scanner;
-/**
- *
- * @author Muhammad Riadi
- */
+
 abstract public class AnalisisIdentitasRuangKelas {
     private String nama;
     private String lokasi;
