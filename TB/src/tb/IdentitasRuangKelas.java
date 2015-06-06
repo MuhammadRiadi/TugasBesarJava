@@ -1,54 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package hais;
 
-import java.util.Scanner;
+package tb;
 
 
-public class IdentitasRuangKelas {
-    private String nama;
-    private String lokasi;
-    private String prodi;
 
-    public String getNama() {
-        return nama;
+public class IdentitasRuangKelas extends AnalisisIdentitasRuangKelas {
+ 
+
+    public IdentitasRuangKelas(String nama, String lokasi, String prodi) {
+        super(nama, lokasi, prodi);
     }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getLokasi() {
-        return lokasi;
-    }
-
-    public void setLokasi(String lokasi) {
-        this.lokasi = lokasi;
-    }
-
-    public String getProdi() {
-        return prodi;
-    }
-
-    public void setProdi(String prodi) {
-        this.prodi = prodi;
-    }
-
   
-      
-    public void Identitas(){
+    @Override  
+    void Identitas(){
         System.out.println("\n\n==IDENTITAS RUANG KELAS==\n\n");
-        Scanner scan=new Scanner(System.in);
+        
         System.out.println("Masukkan Nama Anda: ");
-        setNama(scan.nextLine());
+        super.setNama(scan.nextLine());
         System.out.println("Masukkan Lokasi Ruang: ");
-        setLokasi(scan.nextLine());
+        super.setLokasi(scan.nextLine());
         System.out.println("Masukkan Program Studi: ");
-        setProdi(scan.nextLine());
+        super.setProdi(scan.nextLine());
 }
+    @Override
+     void OutIdentitas(){
+         
+        super.getNama();
+        super.getLokasi();
+        super.getProdi();
+    }
+     
+     
+     
+     
     
 }
 
