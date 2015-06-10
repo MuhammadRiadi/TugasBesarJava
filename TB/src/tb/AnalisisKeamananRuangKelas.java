@@ -13,75 +13,67 @@ import java.util.Scanner;
  */
 abstract public class AnalisisKeamananRuangKelas  {
      Scanner scan=new Scanner(System.in);
-    private int kekokohan;
-    private int kunci;
-    private int keamanan;
+    private String kekokohan;
+    private String kunci;
+    private String keamanan;
     
-    public AnalisisKeamananRuangKelas(int kekokohan,int kunci, int keamanan){
+    public AnalisisKeamananRuangKelas(String kekokohan,String kunci, String keamanan){
         this.kekokohan=kekokohan;
         this.kunci=kunci;
         this.keamanan=keamanan;
     }
     
 
-    public int getKekokohan() {
-        switch(kekokohan){
-            case 1: System.out.println("Kekokohan = Kokoh");
-                break;
-            case 2: System.out.println("Kekokohan = Tidak Kokoh ");}
-        return kekokohan;
+    public String getKekokohan() {
+        if(kekokohan.equalsIgnoreCase("KOKOH")){
+            return "Sesuai";
+        }
+        else return "Tidak Sesuai";
+       
+         
+        
     }
 
-    public void setKekokohan(int kekokohan) {
+    public void setKekokohan(String kekokohan) {
         this.kekokohan = kekokohan;
-        if(kekokohan==1){
-            System.out.println("Sesuai");  
-        }
-        else{
-            System.out.println("Tidak Sesuai");
-        }
+       
     }
     
 
-    public int getKunci() {
-        switch(kunci){
-            case 1: System.out.println("Kunci Pintu dan Jendela = Ada");
-                break;
-            case 2: System.out.println("Kunci Pintu dan Jendela = Tidak Ada");
-        break;
-    }
-        return kunci;
+    public String getKunci() {
+        if(kunci.equalsIgnoreCase("ADA")){
+            return "Sesuai";
+        }
+        else return "Tidak Sesuai";
+       
+        
     }
 
-    public String setKunci(int kunci) {
-        this.kunci = kunci;
-        if(kunci==1){
-            return "Sesuai";  
-        }
-        else{
-            return "Tidak Sesuai";
-        }
+    public void setKunci(String kunci) {
+     this.kunci=kunci;  
+        
        
     }
 
-    public int getKeamanan() {
-        switch(keamanan){
-            case 1: System.out.println("Keamanan = Aman");
-                break;
-            case 2: System.out.println("Keamanan = Tidak Aman");
-                break;}
-        return keamanan;
+    public String getKeamanan() {
+        if(keamanan.equalsIgnoreCase("AMAN")){
+            return "Sesuai";
+        }
+        else return "Tidak Sesuai";
+        
+        
     }
 
-    public String setKeamanan(int keamanan) {
+    public void setKeamanan(String keamanan) {
         this.keamanan = keamanan;
-        if(keamanan==1){
-              return "Sesuai";  
-        }
-        else{
-            return "Tidak Sesuai";
-        }
+       
     }
+    
+   
+    
+ 
+    
+    
     
  abstract void Keamanan();
  abstract void Kuncipintujendela();
