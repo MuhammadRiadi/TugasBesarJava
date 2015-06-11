@@ -4,7 +4,7 @@ package finaltb;
 public class KebersihanRuangKelas extends AnalisisKebersihanRuangKelas {
    
 
-    public KebersihanRuangKelas(int udara, int cahaya, int kelembapan, int suhu) {
+    public KebersihanRuangKelas(String udara, int cahaya, int kelembapan, int suhu) {
         super(udara, cahaya, kelembapan, suhu);
     }
     
@@ -13,7 +13,7 @@ public class KebersihanRuangKelas extends AnalisisKebersihanRuangKelas {
         System.out.println("\n\n==KEBERSIHAN RUANG KELAS==\n\n");
         System.out.println("Masukkan Sirkulasi Udara");
         System.out.println("1.Lancar\n2.Tidak Lancar\nPilih [1-2]");
-        super.setUdara(scan.nextInt());
+        super.setUdara(scan.nextLine());
           
         }
         @Override
