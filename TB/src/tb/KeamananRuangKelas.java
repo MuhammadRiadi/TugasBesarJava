@@ -5,6 +5,10 @@
  */
 package finaltb;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 
 public class KeamananRuangKelas extends AnalisisKeamananRuangKelas {
 
@@ -44,9 +48,20 @@ public class KeamananRuangKelas extends AnalisisKeamananRuangKelas {
     }
      @Override
      void OutputKeamanan(){
-         getKekokohan();
-         getKunci();
-         getKeamanan();
+         try{
+            File data=new File("kjhjkkhk.txt");
+            PrintWriter pr = new PrintWriter(new FileWriter(data,true));
+            pr.println("Kunci dan Pintu Jendea="+getKunci());
+            pr.println("Keamanan="+getKeamanan());
+            pr.println("Kekokohan="+getKekokohan());
+            
+            pr.close();
+            
+            
+        }
+        catch(Exception l){
+            System.out.println("Salah");
+        }
      }
    
     
