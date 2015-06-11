@@ -13,13 +13,13 @@ import java.util.Scanner;
  */
 abstract public class AnalisisKenyamananRuangKelas {
     Scanner scan=new Scanner(System.in);
-        private int bising;
-        private int bau;
-        private int kebocoran;
-        private int kerusakan;
-        private int keausan;
+        private String bising;
+        private String bau;
+        private String kebocoran;
+        private String kerusakan;
+        private String keausan;
 
-    public AnalisisKenyamananRuangKelas(int bising, int bau, int kebocoran, int kerusakan, int keausan) {
+    public AnalisisKenyamananRuangKelas(String bising, String bau, String kebocoran, String kerusakan, String keausan) {
         this.bising = bising;
         this.bau = bau;
         this.kebocoran = kebocoran;
@@ -29,107 +29,93 @@ abstract public class AnalisisKenyamananRuangKelas {
         
         
         
-    public int getBising() {
-        switch(bising){
-            case 1: System.out.println("Kebisingan = Iya");
-                break;
-            case 2: System.out.println("Kebisingan = Tidak ");
-                
+    public String getBising() {
+        if("Iya".equalsIgnoreCase(bising)){
+            return "Tidak Sesuai";
         }
-        return bising;
+        else return "Tidak Sesuai";
+   
+    }
+    
+
+    public void setBising(String bising) {
+        this.bising = bising;
+       
     }
 
-    public String setBising(int bising) {
-        this.bising = bising;
-        if(bising==1){
-            return "Sesuai";  
+    public String getBau() {
+        if(bau.equalsIgnoreCase("Iya")){
+            return "Tidak Sesuai";  
         }
         else{
-            return "Tidak Sesuai";
+            return "Sesuai";
             
         }
+       
+       
     }
 
-    public int getBau() {
-        switch(bau){
-            case 1: System.out.println("Bau = Iya");
-                break;
-            case 2: System.out.println("Bau = Tidak ");
-        break;
-    }
-        return bau;
-    }
-
-    public String setBau(int bau) {
+    public void setBau(String bau) {
         this.bau = bau;
-        if(bau==2){
+       
+    }
+
+    public String getKebocoran() {
+         if(kebocoran.equalsIgnoreCase("Iya")){
+            return "Tidak Sesuai";  
+        }
+        else{
             return "Sesuai";
+            
         }
-        else{
-            return "Tidak Sesuai";
-        }
-    }
-
-    public int getKebocoran() {
-        switch(kebocoran){
-            case 1: System.out.println("Kebocoran = Iya");
-                break;
-            case 2: System.out.println("Kebocoran = Tidak ");
-                break;
-        }
-        return kebocoran;
-    }
-
-    public String setKebocoran(int kebocoran) {
-        this.kebocoran = kebocoran;
-        if(kebocoran==2){
-            return "Sesuai";  
-        }
-        else{
-            return "Tidak Sesuai";
-        }
-    }
-
-    public int getKerusakan() {
-        switch(kerusakan){
-            case 1: System.out.println("Kerusakan = Iya");
-                break;
-            case 2: System.out.println("Kerusakan = Tidak ");
-                break;
-        }   
-        return kerusakan;
-    }
-
-    public String setKerusakan(int kerusakan) {
-        this.kerusakan = kerusakan;
-        if(kerusakan==2){
-            return "Sesuai";  
-        }
-        else{
-            return "Tidak Sesuai";
-        }
-    }
-
-    public int getKeausan() {
+       
         
-            switch(keausan){
-            case 1: System.out.println("Keausan = Iya");
-                break;
-            case 2: System.out.println("Keausan = Tidak ");
-                break;
-            }
-        return keausan;
     }
 
-    public String setKeausan(int keausan) {
-        this.keausan = keausan;
-        if(keausan==2){
-            return "Sesuai"; 
+    public void setKebocoran(String kebocoran) {
+        this.kebocoran = kebocoran;
+        
+    }
+
+    public String getKerusakan() {
+        if(kerusakan.equalsIgnoreCase("Iya")){
+            return "Tidak Sesuai";  
         }
         else{
-            return "Tidak Sesuai";
+            return "Sesuai";
+            
         }
+       
+        
     }
+
+    public void setKerusakan(String kerusakan) {
+        this.kerusakan = kerusakan;
+       
+    }
+
+    public String getKeausan() {
+        
+        if(keausan.equalsIgnoreCase("Iya")){
+            return "Tidak Sesuai";  
+        }
+        else{
+            return "Sesuai";
+            
+        }   
+        
+    }
+
+    public void setKeausan(String keausan) {
+        this.keausan = keausan;
+       
+    }
+    
+    
+    
+   
+    
+    
     
     abstract void Bising();
     abstract void Bau();
