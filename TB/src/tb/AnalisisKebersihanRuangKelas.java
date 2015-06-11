@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 abstract public class AnalisisKebersihanRuangKelas {
     Scanner scan=new Scanner(System.in);
-    private int udara;
+    private String udara;
     private int cahaya;
     private int kelembapan;
     private int suhu;
 
-    public AnalisisKebersihanRuangKelas(int udara, int cahaya, int kelembapan, int suhu) {
+    public AnalisisKebersihanRuangKelas(String udara, int cahaya, int kelembapan, int suhu) {
         this.udara = udara;
         this.cahaya = cahaya;
         this.kelembapan = kelembapan;
@@ -20,89 +20,84 @@ abstract public class AnalisisKebersihanRuangKelas {
     
 
     public int getSuhu() {
-         if(25 >= suhu || suhu <=35 ){
-               System.out.println("Suhu="+cahaya+"Sesuai");  
-        }
-        else{
-             System.out.println("Suhu="+cahaya+"Tidak Sesuai");  
-        }
+         
         
         return suhu;
     }
 
-    public String setSuhu(int suhu) {
+    public void setSuhu(int suhu) {
         this.suhu = suhu;
-        if(suhu>=25&&suhu<=35){
-               return "Sesuai";  
-        }
-        else{
-            return "Tidak Sesuai";
-        }//To change body of generated methods, choose Tools | Templates.
+      
     }
         
     
-    public int getCahaya() {
-        if(250>=cahaya&&cahaya<=350){
-               System.out.println("Cahaya="+cahaya+"Sesuai");  
-        }
-        else{
-             System.out.println("Cahaya="+cahaya+"Tidak Sesuai");  
-        }
-        return cahaya;
-    }
-
-    public String setCahaya(int cahaya) {
-        this.cahaya = cahaya;
-         if(cahaya>=250&&cahaya<=350){
+    public String getCahaya() {
+        if(cahaya>=250&&cahaya<=350){
                return "Sesuai";  
         }
         else{
-            return "Tidak Sesuai";
+             return "Tidak Sesuai";  
         }
-    
+       
+        
     }
 
-    public int getUdara() {
-        switch(udara){
-            case 1: System.out.println("Siklus Udara = Lancar");
-                break;
-            case 2: System.out.println("Siklus Udara = Tidak Lancar ");
-                break;}
-        return udara;
+    public void setCahaya(int cahaya) {
+        this.cahaya = cahaya;
+         
     }
 
-    public String setUdara(int udara) {
-        this.udara = udara;
-        if(udara==1){
+    public String getUdara() {
+         if("LANCAR".equals(getUdara())){
               return "Sesuai";  
         }
         else{
             return "Tidak Sesuai";
         }
+        
+        
+    }
+
+    public void setUdara(String udara) {
+        this.udara = udara;
+        
         } 
     
 
  
 
-    public int getKelembapan() {
-        if(250>=kelembapan&&kelembapan<=350){
-               System.out.println("Kelembapan="+kelembapan+"Sesuai");  
+    public String getKelembapan() {
+        if(kelembapan>=250 &&kelembapan<=350){
+              return "Sesuai";  
         }
         else{
-             System.out.println("Kelembapan="+kelembapan+"Tidak Sesuai");  
+             return "Tidak Sesuai";  
         }
-        return kelembapan;
+        
+        
     }
 
-    public String setKelembapan(int kelembapan) {
+    public void setKelembapan(int kelembapan) {
         this.kelembapan = kelembapan;
-         if(kelembapan>=70&&kelembapan<=80){
+         
+    }
+    
+    public String AnlsSuhu(){
+         if(25 >= getSuhu() || getSuhu() <=35 ){
                return "Sesuai";  
         }
         else{
-            return "Tidak Sesuai";
-         }
+             return "Tidak Sesuai";  
+        }
     }
+    
+   
+        
+        
+    
+    
+
+    
     
     
     abstract void SirkulasiUdara();
