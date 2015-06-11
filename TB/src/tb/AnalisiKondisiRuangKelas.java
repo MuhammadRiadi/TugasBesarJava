@@ -1,5 +1,9 @@
-
-package tb;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package finaltb;
 
 import java.util.Scanner;
 abstract public class AnalisiKondisiRuangKelas  {
@@ -7,12 +11,15 @@ abstract public class AnalisiKondisiRuangKelas  {
     private int lebar;
     private int luas;
     private int jumlahkursi;
-    private int rasio;
+    private double rasio;
     private int pintu;
     private int jendela;
+    private String bentuk;
+    private String PintuJendela;
+    
     Scanner scan=new Scanner(System.in);
 
-    public AnalisiKondisiRuangKelas(int panjang, int lebar, int luas, int jumlahkursi, int rasio, int pintu, int jendela) {
+    public AnalisiKondisiRuangKelas(int panjang, int lebar, int luas, int jumlahkursi, double rasio, int pintu, int jendela) {
         this.panjang = panjang;
         this.lebar = lebar;
         this.luas = luas;
@@ -41,19 +48,17 @@ abstract public class AnalisiKondisiRuangKelas  {
 
     public int getLuas() {
         luas = getPanjang()*getLebar();
-        System.out.print("Luas="+luas);
-        if(getPanjang()==getLebar()) {
-            System.out.println("/Bentuk Ruang Persegi");
-        }
-        else
-            if(getPanjang()!=getLebar())
-        {   System.out.println("/Bentuk Ruang Persegi Panjang");
         
-    }   return luas;
-}
-
+        return luas;
+    }
     
-
+    public String Bentuk(){
+        if(getPanjang()==getLebar()){
+            return "Bentuk Persegi";
+        }
+        else return " Bentuk Persegi Panjang";
+    }
+    
     public int getJumlahkursi() {
         return jumlahkursi;
     }
@@ -62,67 +67,59 @@ abstract public class AnalisiKondisiRuangKelas  {
         this.jumlahkursi = jumlahkursi;
     }
 
-    public int getRasio() {
-        rasio=luas/getJumlahkursi();
-        System.out.print("Rasio:"+rasio);
+    public String getRasio( ) {
+        rasio=getLuas()/getJumlahkursi();
+        
                 if(rasio >= 0.5){
-                    System.out.println("/Sesuai");
+                    return "Sesuai";
                 }
-                else
-                    System.out.println("/Tidak Sesuai");
-        return rasio;
+                else{
+                    return "Tidak Sesuai";}
+                
+                
+                
+        
         
     }
-
-
-        
     
-
+   
+    
+    
+    
     public int getPintu() {
-        if(pintu>=2 ){
-            System.out.println("Pintu="+pintu+" Sesuai"); 
-            
-        }
-        else {
-            System.out.println("Pintu="+pintu+" Tidak Sesuai");
-        }
+        
         return pintu;
     }
 
-    public String setPintu(int pintu) {
+    public void setPintu(int pintu) {
         this.pintu = pintu;
-        if(pintu>=2 ){
-            return "Sesuai";
-            
-        }
-        else {
-            return "Tidak Sesuai";
-    }
+       
+        
     }
 
     public int getJendela() {
-        if(jendela>=2 ){
-            System.out.println("Jendela:"+jendela+":Sesuai"); 
-            
-        }
-        else {
-            System.out.println("Jendela:"+jendela+":Tidak Sesuai");
-        }
+      
         
         return jendela;
     }
 
-    public String setJendela(int jendela) {
-        this.jendela = jendela;
-        if(jendela >=1){
-            return "Sesuai";
-            
-        }
-        else {
-            return "Tidak Sesuai";
+    public void setLuas(int luas) {
+        this.luas = luas;
     }
+
+    public void setJendela(int jendela) {
+        this.jendela = jendela;
         
     }
+        
+     public String getPintuJendela(){
+         if(getPintu()>=2 && getJendela()>=1 ) {
+             return "Sesuai";
+        } else return "Tidak Sesuai";
+         
+     }
+        
+    
     
     abstract void Luas();
     abstract void Rasio();
@@ -131,4 +128,3 @@ abstract public class AnalisiKondisiRuangKelas  {
     
     
 }
-/*
