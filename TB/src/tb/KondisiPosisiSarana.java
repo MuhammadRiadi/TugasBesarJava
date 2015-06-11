@@ -114,7 +114,7 @@ public class KondisiPosisiSarana extends AnalisisKondisiPosisiSarana {
         getInternet();getLogin();
         getCctv();getKondisicctv();getPosisicctv();
       
-        
+    
         
     }
     
