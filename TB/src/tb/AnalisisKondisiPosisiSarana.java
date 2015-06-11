@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools  Templates
+ * and open the template in the editor.
+ */
 package finaltb;
 
 import java.util.Scanner;
@@ -7,27 +11,27 @@ import java.util.Scanner;
 abstract class AnalisisKondisiPosisiSarana {
     Scanner scan=new Scanner(System.in);
     private int steker;
-    private int kondisisteker;
-    private int posisisteker;
+    private String kondisisteker;
+    private String posisisteker;
     private int lcd;
-    private int kondisilcd;
-    private int posisilcd;
+    private String kondisilcd;
+    private String posisilcd;
     private int lampu;
-    private int kondisilampu;
-    private int posisilampu;
+    private String kondisilampu;
+    private String posisilampu;
     private int kipas;
-    private int kondisikipas;
-    private int posisikipas;
+    private String kondisikipas;
+    private String posisikipas;
     private int ac;
-    private int kondisiac;
-    private int posisiac;
-    private int internet;
-    private int login;
+    private String kondisiac;
+    private String posisiac;
+    private String internet;
+    private String login;
     private int cctv;
-    private int posisicctv;
-    private int kondisicctv;
+    private String posisicctv;
+    private String kondisicctv;
 
-    public AnalisisKondisiPosisiSarana(int steker, int kondisisteker, int posisisteker, int lcd, int kondisilcd, int posisilcd, int lampu, int kondisilampu, int posisilampu, int kipas, int kondisikipas, int posisikipas, int ac, int kondisiac, int posisiac, int internet, int login, int kondisilogin, int cctv, int posisicctv, int kondisicctv) {
+    public AnalisisKondisiPosisiSarana(int steker, String kondisisteker, String posisisteker, int lcd, String kondisilcd, String posisilcd, int lampu, String kondisilampu, String posisilampu, int kipas, String kondisikipas, String posisikipas, int ac, String kondisiac, String posisiac, String internet, String login, String kondisilogin, int cctv, String posisicctv, String kondisicctv) {
         this.steker = steker;
         this.kondisisteker = kondisisteker;
         this.posisisteker = posisisteker;
@@ -50,314 +54,289 @@ abstract class AnalisisKondisiPosisiSarana {
         this.kondisicctv = kondisicctv;
     }
 
-    public int getSteker() {
+    public String getSteker() {
         System.out.println("Jumlah Steker="+steker);
-        return steker;
+         if(steker>=4){
+            return "Sesuai";}
+                    else {
+                            return"Tidak Sesuai";                             
+                            }
+        
     }
 
-    public String setSteker(int steker) {
+    public void setSteker(int steker) {
         this.steker = steker;
-        if(steker>=4){
+       
+    }
+
+    public String getKondisisteker() {
+        if(kondisisteker.equalsIgnoreCase("Baik")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+        
+        
     }
 
-    public int getKondisisteker() {
-        switch(kondisisteker){
-            case 1:System.out.println("Kondisi = Baik");
-                break;}
-        return kondisisteker;
-    }
-
-    public String setKondisisteker(int kondisisteker) {
+    public void setKondisisteker(String kondisisteker) {
         this.kondisisteker = kondisisteker;
-        if(kondisisteker==1){
+        
+    }
+
+    public String getPosisisteker() {
+        if(posisisteker.equalsIgnoreCase("Pojok Ruang")||posisisteker.equalsIgnoreCase("Dekat Dosen")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+         
     }
 
-    public int getPosisisteker() {
-         switch(posisisteker){
-            case 1:System.out.println("Posisi = Pojok Ruang ");
-                break;
-            case 2:System.out.println("Posisi = Dekat Dosen ");}
-        return posisisteker;
-    }
-
-    public String setPosisisteker(int posisisteker) {
+    public void setPosisisteker(String posisisteker) {
         this.posisisteker = posisisteker;
-        if(kondisisteker==1){
-            return "Sesuai";}
-                    else {
-                            return"Tidak Sesuai";                             
-                            }
+        
     }
 
-    public int getLcd() {
+    public String getLcd() {
         System.out.println("Jumlah LCD="+lcd);
-        return lcd;
-    }
-
-    public String setLcd(int lcd) {
-        this.lcd = lcd;
         if(lcd>1){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+       
     }
 
-    public int getKondisilcd() {
-        switch(kondisilcd){
-            case 1:System.out.println("Kondisi = Baik");
-                break;}
-        return kondisilcd;
+    public void setLcd(int lcd) {
+        this.lcd = lcd;
+        
     }
 
-    public String setKondisilcd(int kondisilcd) {
+    public String getKondisilcd() {
+       if(kondisilcd.equalsIgnoreCase("Baik")){
+            return "Sesuai";}
+                    else {
+                            return"Tidak Sesuai";                             
+                            }
+       
+    }
+
+    public void setKondisilcd(String kondisilcd) {
         this.kondisilcd = kondisilcd;
-        if(kondisilcd==1){
+        
+    }
+
+    public String getPosisilcd() {
+         if(posisilcd.equalsIgnoreCase("Dekat Dosen")){
             return "Sesuai";}
-                    else {
                             return"Tidak Sesuai";                             
                             }
-    }
+    
 
-    public int getPosisilcd() {
-        switch(posisilcd){
-            case 1:System.out.println("Posisi = Pojok Ruang ");
-                break;
-            case 2:System.out.println("Posisi = Dekat Dosen ");}
-        return posisilcd;
-    }
-
-    public String setPosisilcd(int posisilcd) {
+    public void setPosisilcd(String posisilcd) {
         this.posisilcd = posisilcd;
-        if(posisilcd==2){
-            return "Sesuai";}
-                    else {
-                            return"Tidak Sesuai";                             
-                            }
+       
     }
 
-    public int getLampu() {
+    public String getLampu() {
         System.out.println("Jumlah Lampu="+lampu);
-        return lampu;
-    }
-
-    public String setLampu(int lampu) {
-        this.lampu = lampu;
         if(lampu>18){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+        
     }
 
-    public int getKondisilampu() {
-        switch(kondisilampu){
-            case 1:System.out.println("Kondisi = Baik");
-                break;}
-        return kondisilampu;
+    public void setLampu(int lampu) {
+        this.lampu = lampu;
+        
     }
 
-    public String setKondisilampu(int kondisilampu) {
+    public String getKondisilampu() {
+        if(kondisilampu.equalsIgnoreCase("Baik")){
+            return "Sesuai";}
+                    else {
+                            return"Tidak Sesuai";                             
+                            }
+        
+    }
+
+    public void setKondisilampu(String kondisilampu) {
         this.kondisilampu = kondisilampu;
-        if(kondisilampu==1){
+        
+    }
+
+    public String getPosisilampu() {
+        if(posisilampu.equalsIgnoreCase("Atap Ruangan")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
     }
 
-    public int getPosisilampu() {
-        switch(posisilampu){
-            case 1:System.out.println("Posisi = Atap ");
-                break;
-            case 2:System.out.println("Posisi = Dinding ");}
-        return posisilampu;
-    }
-
-    public String setPosisilampu(int posisilampu) {
+    public void setPosisilampu(String posisilampu) {
         this.posisilampu = posisilampu;
-        if(posisilampu==1){
-            return "Sesuai";}
-                    else {
-                            return"Tidak Sesuai";                             
-                            }
+        
     }
 
-    public int getKipas() {
+    public String getKipas() {
         System.out.println("Jumlah Kipas Angin="+kipas);
-        return kipas;
-    }
-
-    public String setKipas(int kipas) {
-        this.kipas = kipas;
         if(kipas>1){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+        
     }
 
-    public int getKondisikipas() {
-         switch(kondisikipas){
-            case 1:System.out.println("Kondisi = Berfungsi");
-                break;}
-        return kondisikipas;
+    public void setKipas(int kipas) {
+        this.kipas = kipas;
+        
     }
 
-    public String setKondisikipas(int kondisikipas) {
+    public String getKondisikipas() {
+         if(kondisikipas.equalsIgnoreCase("Baik")){
+            return "Sesuai";}
+                    else {
+                            return"Tidak Sesuai";                             
+                            }
+    }
+
+    public void setKondisikipas(String kondisikipas) {
         this.kondisikipas = kondisikipas;
-        if(kondisikipas==1){
+        
+    }
+
+    public String getPosisikipas() {
+       if(posisikipas.equalsIgnoreCase("Atap Ruangan")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
     }
 
-    public int getPosisikipas() {
-        switch(posisisteker){
-            case 1:System.out.println("Posisi = Atap Ruangan ");
-                break;
-            case 2:System.out.println("Posisi = Meja Dosen ");}
-        return posisikipas;
-    }
-
-    public String setPosisikipas(int posisikipas) {
+    public void setPosisikipas(String posisikipas) {
         this.posisikipas = posisikipas;
-        if(posisikipas==1){
-            return "Sesuai";}
-                    else {
-                            return"Tidak Sesuai";                             
-                            }
+        
     }
 
-    public int getAc() {
+    public String getAc() {
         System.out.println("Jumlah Ac="+ac);
-        return ac;
-    }
-
-    public String setAc(int ac) {
-        this.ac = ac;
         if(ac>=1){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+      
     }
 
-    public int getKondisiac() {
-        switch(kondisiac){
-            case 1:System.out.println("Kondisi = Berfungsi");
-                break;}
-        return kondisiac;
+    public int setAc(int ac) {
+        this.ac = ac;
+        return ac;
     }
 
-    public String setKondisiac(int kondisiac) {
+    public String getKondisiac() {
+        if(kondisiac.equalsIgnoreCase("Baik")){
+            return "Sesuai";}
+                    else {
+                            return"Tidak Sesuai";                             
+                            }
+    }
+
+    public void setKondisiac(String kondisiac) {
         this.kondisiac = kondisiac;
-        if(kondisiac==1){
+        
+    }
+
+    public String getPosisiac() {
+        if(posisiac.equalsIgnoreCase("Belakang")||posisiac.equalsIgnoreCase("Samping")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
     }
 
-    public int getPosisiac() {
-        switch(posisiac){
-            case 1:System.out.println("Posisi = Pojok Ruang ");
-                break;
-            case 2:System.out.println("Posisi = Dinding ");}
-        return posisiac;
-    }
-
-    public String setPosisiac(int posisiac) {
+    public void setPosisiac(String posisiac) {
         this.posisiac = posisiac;
-        if(posisiac==2){
+        
+    }
+
+    public String getInternet() {
+        System.out.println("SSID ="+internet);
+        if(posisiac.equalsIgnoreCase("UMM Hotspot")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
+        
+       
     }
 
-    public int getInternet() {
-        System.out.println("SSID ="+internet);
-        return internet;
-    }
-
-    public void setInternet(int internet) {
+    public void setInternet(String internet) {
         this.internet = internet;
        
     }
 
-    public int getLogin() {
-        switch(login){
-            case 1:System.out.println("Login = Berhasil");
-                break;}
-        return login;
-    }
-
-    public String setLogin(int login) {
-        this.login = login;
-        if(login==1){
+    public String getLogin() {
+        if(login.equalsIgnoreCase("Login")){
             return "Berhasil";}
                     else {
                             return"Tidak Berhasil";                             
                             }
+       
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+       
     }
 
 
     
 
-    public int getCctv() {
+    public String getCctv() {
         System.out.println("Jumlah CCTV="+cctv);
-        return cctv;
+        if(cctv>=1){
+            return "Sesuai";
+        }
+        else return "Tidak Sesuai";
     }
+                                       
+                            
+        
+    
 
-    public String setCctv(int cctv) {
+    public void setCctv(int cctv) {
         this.cctv = cctv;
-        if(cctv==2){
+        
+    }
+
+    public String getPosisicctv() {
+        if(posisicctv.equalsIgnoreCase("Depan")||posisicctv.equalsIgnoreCase("Belakang")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
     }
 
-    public int getPosisicctv() {
-        switch(posisicctv){
-            case 1:System.out.println("Kondisi = Berfungsi");
-                break;}
-        return posisicctv;
-    }
-
-    public String setPosisicctv(int posisicctv) {
+    public void setPosisicctv(String posisicctv) {
         this.posisicctv = posisicctv;
-        if(posisicctv==2){
+       
+    }
+
+    public String getKondisicctv() {
+        if(posisicctv.equalsIgnoreCase("Baik")){
             return "Sesuai";}
                     else {
                             return"Tidak Sesuai";                             
                             }
     }
 
-    public int getKondisicctv() {
-        switch(kondisicctv){
-            case 1:System.out.println("Kondisi = Berfungsi");
-                break;}
-        return kondisicctv;
-    }
-
-    public String setKondisicctv(int kondisicctv) {
+    public void setKondisicctv(String kondisicctv) {
         this.kondisicctv = kondisicctv;
-        if(posisicctv==2){
-            return "Sesuai";}
-                    else {
-                            return"Tidak Sesuai";                             
-                            }
+        
     }
     
     abstract void Steker();
