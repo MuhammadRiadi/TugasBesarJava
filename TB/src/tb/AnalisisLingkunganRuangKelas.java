@@ -13,13 +13,13 @@ import java.util.Scanner;
  */
 abstract public class AnalisisLingkunganRuangKelas  {
         Scanner scan=new Scanner(System.in);
-    private int lantai;
-    private int dinding;
-    private int atap;
-    private int pintu;
-    private int jendela;
+    private String lantai;
+    private String dinding;
+    private String atap;
+    private String pintu;
+    private String jendela;
 
-    public AnalisisLingkunganRuangKelas(int lantai, int dinding, int atap, int pintu, int jendela) {
+    public AnalisisLingkunganRuangKelas(String lantai, String dinding, String atap, String pintu, String jendela) {
         this.lantai = lantai;
         this.dinding = dinding;
         this.atap = atap;
@@ -29,107 +29,79 @@ abstract public class AnalisisLingkunganRuangKelas  {
     
     
 
-    public int getLantai() {
-        switch(lantai){
-            case 1: System.out.println("Lantai = Bersih");
-                break;
-            case 2: System.out.println("Lantai = Tidak Bersih ");
-                break;
-            }
-        return lantai;
-    }
-
-    public String setLantai(int lantai) {
-        this.lantai = lantai;
-        if(lantai==1){
-            return "Bersih";
+    public String getLantai() {
+        if(lantai.equalsIgnoreCase("Bersih")){
+            return "Sesuai";
         }
         else{
-            return "Kurang Bersih"; 
+            return "Tidak Sesuai"; 
     }
-    }
-
-    public int getDinding() {
-        switch(dinding){
-            case 1: System.out.println("Dinding = Bersih");
-                break;
-            case 2: System.out.println("Dinding = Tidak Bersih ");
-                break;}
-        return dinding;
-    }
-
-    public String setDinding(int dinding) {
-        this.dinding = dinding;
-        if(dinding==1){
-            return "Bersih";
-        }
-        else{
-            return "Kurang Bersih";
-    }
-    }
-
-    public int getAtap() {
         
-    switch(atap){
-            case 1: System.out.println("Atap = Bersih");
-                break;
-            case 2: System.out.println("Atap = Tidak Bersih ");
-                break;
-            }
-        return atap;
     }
 
-    public String setAtap(int atap) {
+    public void setLantai(String lantai) {
+        this.lantai = lantai;
+       
+    }
+
+    public String getDinding() {
+         if(dinding.equalsIgnoreCase("Bersih")){
+            return "Sesuai";
+        }
+        else{
+            return "Tidak Sesuai"; 
+    }
+    }
+
+    public void setDinding(String dinding) {
+        this.dinding = dinding;
+        
+    }
+
+    public String getAtap() {
+        
+     if(atap.equalsIgnoreCase("Bersih")){
+            return "Sesuai";
+        }
+        else{
+            return "Tidak Sesuai"; 
+    }
+    }
+
+    public void setAtap(String atap) {
         this.atap = atap;
-        if(atap==1){
-            return "Bersih";
+    }
+
+    public String getPintu() {
+        if(pintu.equalsIgnoreCase("Bersih")){
+            return "Sesuai";
         }
         else{
-            return "Kurang Bersih";
+            return "Tidak Sesuai"; 
     }
     }
 
-    public int getPintu() {
-        switch(pintu){
-            case 1: System.out.println("Pintu = Bersih");
-                break;
-            case 2: System.out.println("Pintu = Tidak Bersih ");
-                break;}
-        return pintu;
-    }
-
-    public String setPintu(int pintu) {
+    public void setPintu(String pintu) {
         this.pintu = pintu;
-        if(pintu==1){
-            return "Bersih";
+        
+    }
+
+    public String getJendela() {
+         if(jendela.equalsIgnoreCase("Bersih")){
+            return "Sesuai";
         }
         else{
-            return "Kurang Bersih";
-    }
-    }
-
-    public int getJendela() {
-        switch(jendela){
-            case 1: System.out.println("Jendela = Bersih");
-                break;
-            case 2: System.out.println("Keausan = Tidak Bersih");
-                break;
-            }
-        return jendela;
+            return "Tidak Sesuai"; 
+         }
     }
 
-    public String setJendela(int jendela) {
+    public void setJendela(String jendela) {
         this.jendela = jendela;
-        if(jendela==1){
-            return "Bersih";
-        }
-        else{
-            return "Kurang Bersih";
-    }
+        
     }
 
     
-        
+
    abstract void InputLingkungan();
         
    abstract void OutputLingkungan();
