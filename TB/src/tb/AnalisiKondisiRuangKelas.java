@@ -119,7 +119,7 @@ abstract public class AnalisiKondisiRuangKelas  {
          
      }
         
-    
+
     
     abstract void Luas();
     abstract void Rasio();
