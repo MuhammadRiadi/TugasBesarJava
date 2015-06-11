@@ -1,6 +1,10 @@
 
 package finaltb;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class KebersihanRuangKelas extends AnalisisKebersihanRuangKelas {
    
 
@@ -36,10 +40,20 @@ public class KebersihanRuangKelas extends AnalisisKebersihanRuangKelas {
      @Override
      void OutputKebersihan(){
          
-         super.getUdara();
-         super.getCahaya();
-         super.getKelembapan();
-         super.getSuhu();
+         try{
+            File data=new File("kjhjkkhk.txt");
+            PrintWriter pr = new PrintWriter(new FileWriter(data,true));
+            pr.println("Sirkulasi Udara="+getUdara());
+            pr.println("Cahaya="+getCahaya());
+            pr.println("Suhu="+getSuhu());
+            pr.println("Kelembapan="+getKelembapan());
+            pr.close();
+            
+            
+        }
+        catch(Exception l){
+            System.out.println("Salah");
+        }
      }
              
     
