@@ -8,7 +8,7 @@ package finaltb;
 
 public class KeamananRuangKelas extends AnalisisKeamananRuangKelas {
 
-    public KeamananRuangKelas(int kekokohan, int kunci, int keamanan) {
+    public KeamananRuangKelas(String kekokohan, String kunci, String keamanan) {
         super(kekokohan, kunci, keamanan);
     }
    
@@ -17,7 +17,8 @@ public class KeamananRuangKelas extends AnalisisKeamananRuangKelas {
         System.out.println("\n\n==KEAMANAN RUANG KELAS==\n\n");
         System.out.println("Apakah Ruang Kelas Kokoh");
         System.out.println("1.Kokoh\n2.Tidak Kokoh\nPilih [1-2]");
-        setKekokohan(scan.nextInt());
+        super.setKekokohan(scan.nextLine());
+        super.getKekokohan();
     }
     @Override
              
@@ -26,7 +27,9 @@ public class KeamananRuangKelas extends AnalisisKeamananRuangKelas {
         
         System.out.println("Apakah Ada Kunci Pintu dan Jendela");
         System.out.println("1.Ada\n2.Tidak Ada\nPilih [1-2]");
-        setKunci(scan.nextInt());
+        super.setKunci(scan.nextLine());
+        super.getKunci();
+        
     }
     @Override
      void Keamanan(){
@@ -34,7 +37,8 @@ public class KeamananRuangKelas extends AnalisisKeamananRuangKelas {
         
         System.out.println("Apakah Ruang Kelas Aman");
         System.out.println("1.Aman\n2.Tidak Aman\nPilih [1-2]");
-        setKeamanan(scan.nextInt());
+        super.setKeamanan(scan.nextLine());
+        super.getKeamanan();
         
         
     }
