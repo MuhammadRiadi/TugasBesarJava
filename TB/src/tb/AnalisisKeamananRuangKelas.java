@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- *@author Predator
+ * @author Predator
  */
 abstract public class AnalisisKeamananRuangKelas  {
      Scanner scan=new Scanner(System.in);
